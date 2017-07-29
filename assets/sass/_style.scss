@@ -1,3 +1,43 @@
 body{
 	background: purple;
+
+	a{
+		text-decoration: none;
+	}
+
+	a:hover{
+		text-decoration: none;
+	}
+
+	nav{
+		background-color: white;
+		.logo{
+			width: 30px;
+		}
+
+		.inicio{
+			color: #D1D1D1;
+			display: inline-block
+		}
+
+		.input{
+			width: 800px;
+		}
+
+		.input[placeholder]{
+			padding-left: 25px;
+		}
+
+		.search{
+			width: 25px;
+			position: absolute;
+		}
+
+		.x{
+			margin-left: -16px;
+			color: silver;
+		}
+
+		
+	}
 }
