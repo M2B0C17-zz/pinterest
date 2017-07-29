@@ -13,6 +13,7 @@ body{
 		text-decoration: none;
 	}
 
+	/* NAV */
 	nav{
 		background-color: white;
 		height: 50px;
@@ -85,4 +86,31 @@ body{
 			padding-left: 120px;
 		}
 	}
+	/* FIN NAV */
+	/* OPCIONES */
+	.opciones{
+		.cajaOpciones{
+			padding-left: 10%;
+			padding-top: 3%;
+		}
+
+		.opciones{
+			
+			padding: 10px;
+			color: white;
+			font-weight: 400;
+			font-size: 15px;
+			border: 1px solid transparent;
+			border-radius: 10px;
+		}
+
+		.op1{
+			background-image: url('../img/opciones/dress.jpg');
+		}
+	}
+
+
+	/* FIN OPCIONES */
+
+
 }
