@@ -362,12 +362,16 @@ $(document).ready(function(){
 	res.map(function(e){
 		console.log(e);
 
-		$('#json').append('<div style="width: 200px;"><img src="img/' + e.image_url + '" alt=""width="200px"><p>'+ e.description + '</p><p>'+ e.user + '#' + e.hashtag + '</p></div>')
+		$('#json').append('<div style="width: 200px; border: 1px solid transparent; border-radius: 4px;"><img src="img/' + e.image_url + '" alt="" width="200px"><p>'+ e.description + '</p><p>'+ e.user + '#' + e.hashtag + '</p></div>')
  	})
 
+ 	/* Modal */
 
 
 });
+
+
+
 
 /*
 var resultado10 = res.forEach(function(el){ // forEach para que recorra
