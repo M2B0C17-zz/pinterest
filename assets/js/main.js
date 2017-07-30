@@ -362,10 +362,21 @@ $(document).ready(function(){
 	res.map(function(e){
 		console.log(e);
 
-		$('#json').append('<div class="json2" style="width: 200px; border: 1px solid transparent; border-radius: 4px;"><img src="img/' + e.image_url + '" alt="" width="200px"><h4>' + e.title + '</h4><p>' + e.description + '</p><p>'+ e.user + ' #' + e.hashtag + '</p></div>')
+		$('#json').append('<div class="json2" id="modal" style="width: 200px; border: 1px solid transparent; border-radius: 4px;"><img src="img/' + e.image_url + '" alt="" width="200px"><h4>' + e.title + '</h4><p>' + e.description + '</p><p>'+ e.user + ' #' + e.hashtag + '</p></div>')
  	})
 
- 	/* Modal */
+	$("#modal").modal({
+	  fadeDuration: 100
+	});
+
+});
+
+
+
+
+/* NO FUNCIONAN
+
+	// Modal
  	function modal (){
  		var jsonElementos = Array.from(document.getElementsByClassName("json2"));
  		var modal = document.getElementById("modal");
@@ -396,14 +407,29 @@ $(document).ready(function(){
    		 });
 	}
 	modal();
-	/* No supe mostrar la info en un modal y solo se me ocurrió esta forma de solucionarlo. */
 
-});
+	// Scroll
+	$(window).scroll(function(){
+		//se suma posicion del scroll mas el alto de ventana que es igual al final del documento me recarga los otros datos del json.
+		if ($(window).scrollTop() + $(window).height() == $(document).height()){
+			for(var i = 21; i < 40; i++){
+				var recorre = i + 1;
+				var infoPin = '<div class="caja' + recorre + '"><img src="img/' + datos[i].image_url + '" alt="" width="200px"><h4>' + recorre +' "><h4>' + datos[i].title + '</h4><p>' + datos[i].description + '</p><img src="assets/img/user.png"><h5>' + datos[i].username + '</h5><span> #' + datos[i].hashtag + '</span></div>';
+				$("#json").append(infoPin);
+			}
+		}					
+	});
 
+	// sólo 20
+		res.map(function(e){
 
+		for(var i = 0; i < 20; i++){//20 datos
+		var recorrido = i + 1;
+		$('#json').append('<div class="json2" style="width: 200px; border: 1px solid transparent; border-radius: 4px;"><img src="img/' + e[i].image_url + '" alt="" width="200px"><h4>' + e[i].title + '</h4><p>' + e[i].description + '</p><p>'+ e[i].user + ' #' + e[i].hashtag + '</p></div>')
+ 		}
+ 	})
 
-
-/*
+// Json con Js
 var resultado10 = res.forEach(function(el){ // forEach para que recorra
 	var lugar = document.getElementById('json');
 	document.write(lugar + "<b><li>Titulo : </b>" + el.title + "<br></li>");
