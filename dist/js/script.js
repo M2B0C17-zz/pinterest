@@ -10616,10 +10616,40 @@ $(document).ready(function(){
 	res.map(function(e){
 		console.log(e);
 
-		$('#json').append('<div style="width: 200px; border: 1px solid transparent; border-radius: 4px;"><img src="img/' + e.image_url + '" alt="" width="200px"><p>'+ e.description + '</p><p>'+ e.user + '#' + e.hashtag + '</p></div>')
+		$('#json').append('<div class="json2" style="width: 200px; border: 1px solid transparent; border-radius: 4px;"><img src="img/' + e.image_url + '" alt="" width="200px"><p>'+ e.description + '</p><p>'+ e.user + '#' + e.hashtag + '</p></div>')
  	})
 
  	/* Modal */
+ 	function modal (){
+ 		var jsonElementos = Array.from(document.getElementsByClassName("json2"));
+ 		var modal = document.getElementById("modal");
+ 		var mostrar, x, cerrars;
+
+ 		jsonElementos.forEach(function(img){
+ 			img.addEventListener("click", function(){
+ 				modal.innerHTML="";
+
+ 				mostrar= document.createElement("div");
+ 				mostrar.classList.add("modalJson");
+    			mostrar.innerHTML= img.innerHTML;
+
+    			modal.appendChild(mostrar);
+    			modal.classList.remove("hide");
+
+    			cerrars = document.createElement("span");
+    			cerrars.setAttribute("class", "cerrars");
+    			crearX = document.createTextNode("X");
+    			cerrars.appendChild(crearX);
+    			mostrar.appendChild(cerrars);
+
+    			cerrars.addEventListener("click",function(){
+    			modal.classList.add("hide");
+    			});
+			});
+
+   		 });
+	}
+	modal();
 
 
 });
