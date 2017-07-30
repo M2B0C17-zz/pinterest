@@ -90,25 +90,31 @@ body{
 	/* OPCIONES */
 	.opciones{
 		.cajaOpciones{
-			padding-left: 10%;
+			padding-left: 5%;
 			padding-top: 3%;
 		}
 
-		.opciones{
-			
-			padding: 10px;
-			color: white;
+		.fa{
+			position: absolute;
+			margin-top: -25px;
+			margin-left: 8px;
+			text-align: center;
 			font-weight: 400;
-			font-size: 15px;
+			font-size: 20px;
+			color: white;
+		}
+
+		.op12{
+			padding-top: 45px;
+			position: absolute;
+			width: 31px;
+			height: 12px;
+			background-color: rgba(225, 225, 225, 0.7);
 			border: 1px solid transparent;
 			border-radius: 10px;
-		}
-
-		.op1{
-			background-image: url('../img/opciones/dress.jpg');
+			margin-left: 5px;
 		}
 	}
-
 
 	/* FIN OPCIONES */
 

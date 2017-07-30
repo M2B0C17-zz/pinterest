@@ -5,7 +5,6 @@ var	sass = require('gulp-sass');
 var	minifyCSS = require('gulp-minify-css');
 var	webserver = require('gulp-webserver');
 var watch = require('gulp-watch');
-var imagenes = require('gulp-imagemin')
 
 gulp.task('script', function(){
 	gulp.src(['node_modules/jquery/dist/jquery.js', 'assets/js/*.js'])
@@ -32,18 +31,10 @@ gulp.task('webserver', function(){
 		}));
 });
 
-// no funciona las imagenes -.-
-gulp.task('imagenes', function() {
-  return gulp.src('img/**/*')
-    .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
-    .pipe(gulp.dest('img'));
-});
 
 gulp.task('watch', function() {
     gulp.watch('assets/sass/*.scss', ['style']);
-    // Vigila las imagenes en
-  	gulp.watch('img/**/*', ['imagenes']);
 });
 
 
-gulp.task('default', ['script', 'style', 'webserver', 'imagenes', 'watch']);
+gulp.task('default', ['script', 'style', 'webserver', 'watch']);
