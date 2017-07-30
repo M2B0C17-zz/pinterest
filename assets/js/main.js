@@ -362,7 +362,7 @@ $(document).ready(function(){
 	res.map(function(e){
 		console.log(e);
 
-		$('#json').append('<div class="json2" style="width: 200px; border: 1px solid transparent; border-radius: 4px;"><img src="img/' + e.image_url + '" alt="" width="200px"><p>'+ e.description + '</p><p>'+ e.user + '#' + e.hashtag + '</p></div>')
+		$('#json').append('<div class="json2" style="width: 200px; border: 1px solid transparent; border-radius: 4px;"><img src="img/' + e.image_url + '" alt="" width="200px"><h4>' + e.title + '</h4><p>' + e.description + '</p><p>'+ e.user + ' #' + e.hashtag + '</p></div>')
  	})
 
  	/* Modal */
@@ -396,7 +396,7 @@ $(document).ready(function(){
    		 });
 	}
 	modal();
-
+	/* No supe mostrar la info en un modal y solo se me ocurrió esta forma de solucionarlo. */
 
 });
 
