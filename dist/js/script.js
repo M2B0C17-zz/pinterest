@@ -10616,15 +10616,21 @@ $(document).ready(function(){
 	res.map(function(e){
 		console.log(e);
 
-		$('#json').append('<div class="json2" style="width: 200px; border: 1px solid transparent; border-radius: 4px;"><img src="img/' + e.image_url + '" alt="" width="200px"><h4>' + e.title + '</h4><p>' + e.description + '</p><p>'+ e.user + ' #' + e.hashtag + '</p></div>')
- 		}
+		$('#json').append('<div class="json2" id="modal" style="width: 200px; border: 1px solid transparent; border-radius: 4px;"><img src="img/' + e.image_url + '" alt="" width="200px"><h4>' + e.title + '</h4><p>' + e.description + '</p><p>'+ e.user + ' #' + e.hashtag + '</p></div>')
  	})
 
-	/* Scroll */
-	
+	$("#modal").modal({
+	  fadeDuration: 100
+	});
+
+});
 
 
- 	/* Modal */
+
+
+/* NO FUNCIONAN
+
+	// Modal
  	function modal (){
  		var jsonElementos = Array.from(document.getElementsByClassName("json2"));
  		var modal = document.getElementById("modal");
@@ -10655,14 +10661,7 @@ $(document).ready(function(){
    		 });
 	}
 	modal();
-	/* No supe mostrar la info en un modal y solo se me ocurrió esta forma de solucionarlo. */
 
-});
-
-
-
-
-/* NO FUNCIONAN
 	// Scroll
 	$(window).scroll(function(){
 		//se suma posicion del scroll mas el alto de ventana que es igual al final del documento me recarga los otros datos del json.

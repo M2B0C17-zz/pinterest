@@ -365,8 +365,15 @@ $(document).ready(function(){
 		$('#json').append('<div class="json2" id="modal" style="width: 200px; border: 1px solid transparent; border-radius: 4px;"><img src="img/' + e.image_url + '" alt="" width="200px"><h4>' + e.title + '</h4><p>' + e.description + '</p><p>'+ e.user + ' #' + e.hashtag + '</p></div>')
  	})
 
-	$("#modal").modal({
+	/*$("#modal").modal({
 	  fadeDuration: 100
+	});*/
+
+	$('#modal').click(function(event) {
+	  $(this).modal({
+	    fadeDuration: 250
+	  });
+	  return false;
 	});
 
 });
